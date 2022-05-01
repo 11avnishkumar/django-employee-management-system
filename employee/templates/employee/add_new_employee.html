@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block header %}
+{% include 'employee/navbar.html' %}
+{% endblock header %}
+<!-- off canvas button -->
+{% block canvas %}
+{% include 'employee/offcanvas_bt.html' %}
+{% endblock canvas %}
+{% block content %}
+<!-- off canvas button trigger-->
+<div class="container col-md-6 mt-3 rounded shadow py-4 px-4">
+	<p class="h3 py-2">Enter employee details</p>
+	<form action="" method="POST" class="needs-validation" novalidate>
+		{% csrf_token %}
+		<div class="row">
+			<div class="col">
+				<div class="form-group my-2">
+					{{form.first_name}}
+				</div>
+			</div>
+			<div class="col">
+				<div class="form-group my-2">
+					{{form.last_name}}
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="form-group my-2">
+					{{form.email}}
+				</div>
+			</div>
+			<div class="col">
+				<div class="form-group my-2">
+					{{form.phoneno}}
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="form-group my-2">
+					{{form.gender}}
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="form-group my-2">
+				<i class="{{ country.flag_css }}"></i>
+					{{form.country}}
+				</div>
+			</div>
+			<div class="col">
+				<div class="form-group my-2">
+					{{form.state}}
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="form-group my-2">
+					{{form.birthdate}}
+				</div>
+			</div>
+			<div class="col">
+				<div class="form-group my-2">
+					{{form.designation}}
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="form-group my-2">
+					{{form.address}}
+				</div>
+			</div>
+		</div>
+		<!-- primary button -->
+		<div class="d-grid my-2">
+			<button type="submit" class="btn btn-primary btn-lg p-4">Add &#10230;</button>
+		</div>
+	</form>
+</div>
+{% endblock content %}

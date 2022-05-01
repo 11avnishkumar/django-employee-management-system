@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} User Profile {% endblock title %}
+{% block header %}
+{% include 'employee/navbar.html' %}
+{% endblock header %}
+{% block content %}
+<div class="container col-md-5 shadow py-3">
+	<div class="image text-center">
+		<img class="img-fluid" src="{% static 'images/Avatar.png' %}" alt="" style="height:100px">
+	</div>
+	<div class="">
+		<div class="row mb-3">
+			<div class="col">
+				Name
+			</div>
+			<div class="col">
+				{{user.first_name}} {{user.last_name}}
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col">
+				Email
+			</div>
+			<div class="col">
+				{{user.email}}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				Username
+			</div>
+			<div class="col">
+				{{user.username}}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}

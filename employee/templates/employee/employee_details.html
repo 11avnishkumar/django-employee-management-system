@@ -1,0 +1,154 @@
+<div class="container mb-3 px-0">
+	<div class="row g-1">
+		<!-- Button trigger modal -->
+		<div class="col-auto">
+			<a href="#" class="btn btn-outline-primary btn-lg mt-2 mb-2" data-bs-toggle="modal" data-bs-target="#add_emp_modal"><i class="fa fa-plus-circle"></i> Add Employee</a>
+		</div>
+		<!-- other buttons-->
+		<div class="col-auto">
+			<a href="#" class="btn btn-outline-primary btn-lg mt-2 mb-2" data-bs-toggle="modal" data-bs-target="#filterModel"><i class="fa fa-filter"></i> Filter</a>
+		</div>
+		<div class="col-auto">
+			<a href="#" class="btn btn-success btn-lg mt-2 mb-2">Active(s) {{total_active_employee}}</a>
+		</div>
+		<div class="col-auto">
+			<a href="#" class="btn btn-danger btn-lg mt-2 mb-2">Inactive(s) {{total_de_active_employee}}</a>
+		</div>
+		<!-- select box-->
+		<div class="col p-2">
+				<form action=""  id="option_box" class="d-none w-50">
+					<div class="row g-1">
+						<div class="col">
+							<select class="form-select form-select-lg" aria-label=".form-select-lg example">
+								<option selected>Select</option>
+								<option value="1">Active</option>
+								<option value="2">Inactive</option>
+							</select>
+						</div>
+						<div class="col-auto">
+							<input type="submit" class="btn btn-outline-secondary btn-lg" value="Go">
+						</div>
+						{% comment %} <div class="col-auto">
+							<p class="text-success text-center"> 0 of 13 selected</p>
+						</div> {% endcomment %}
+					</div>
+				</form>
+		</div>
+	</div>
+</div>
+<!-- Open this modal when add employee button clicked-->
+{% include 'employee/bootstrap_add_employee_modal.html' %}
+<!--filter  Modal -->
+ {% include 'employee/bootstrap_filter_modal.html' %}
+<!-- employee Details Container Model-->
+ <div class="container shadow rounded bg-light">
+   {% if employee_details %}
+  	<table class="table table-borderless">
+  		<thead>
+  			<tr>
+			  	<th>
+				  	<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="select_box">
+					</div>
+				</th>
+  				<th>Name</th>
+  				<th>Email</th>
+  				<th>Phone No</th>
+				<th>Status</th>
+  				<th colspan="3">Action</th>
+  			</tr>
+  		</thead>
+  		<tbody>
+        {% for employee in employee_details  %}
+  			<tr>
+			  	<td>
+				  	<div class="form-check">
+						<input class="form-check-input check" type="checkbox" value="" id="flexCheckDefault">
+					</div>
+				</td>
+  				<td><a href="{{employee.get_absolute_url}}" class="text-decoration-none">{{employee.first_name | capfirst}} {{employee.last_name | capfirst}}</a></td>
+  				<td>{{employee.email}}</td>
+           		<td>{{employee.phoneno}}</td>
+				{% if employee.is_active == True %}
+  				<td>
+					<P class="btn position-relative">
+						<span class="position-absolute top-20 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
+							<span class="visually-hidden">New alerts</span>
+						</span>
+					</P>
+				</td>
+				{% else %}
+				<td>
+					<P class="btn position-relative">
+						<span class="position-absolute top-20 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+							<span class="visually-hidden">New alerts</span>
+						</span>
+					</P>
+				</td>
+				{% endif %}   
+				<td>
+					<div class="dropdown">
+						<i class="fa fa-ellipsis-v px-2" role="button" data-bs-toggle="dropdown"></i>
+						<ul class="dropdown-menu border-0 py-0 shadow" aria-labelledby="dropdownMenuButton1">
+							<li>
+								<a href="{% url 'update-employee' employee.id %}" class="dropdown-item py-2 text-center"><i class="fa h5 fa-pencil-square-o text-info"></i> Change</a>
+							</li>
+	
+							<li>
+							{% if employee.is_active == True %}
+								<a href="{% url 'inactive-employee' employee.id %}" class="dropdown-item py-2 text-center" onclick="return confirm('Are You Sure!')"><i class="fa h5 fa-circle text-danger"></i> Inactive</a>
+							{% else %}	
+								<a href="{% url 'inactive-employee' employee.id %}" class="dropdown-item py-2 text-center" onclick="return confirm('Are You Sure!')"><i class="fa h5 fa-circle text-success"></i> Active</a>
+							{% endif %}
+							</li>
+						</ul>
+					</div>	
+				</td>
+			</tr>
+        {% endfor %}
+		</tbody>
+  	</table>
+    {% else %}
+	<div class="d-flex align-items-center justify-content-center" style="min-height:60vh">
+		<p class="display-3 text-muted">Employee Details will appear here</p>
+	</div>
+    {% endif %}
+  </div>
+	<!-- Pagination -->
+	<div class="container  rounded mt-2 col-md-4">
+		<nav aria-label="...">
+			<ul class="pagination pagination-lg justify-content-center">
+				<!-- show the previus page number-->
+				{% if page.has_previous %}
+				<li class="page-item">
+					<a href="?page={{page.previous_page_number}}" class="page-link">Previous</a>
+				</li>
+				{% else %}
+				<li class="page-item disabled">
+					<a href="#" class="page-link">Previous</a>
+				</li>
+				{% endif %}
+				{% if page.number %}
+				<li class="page-item">
+					<a class="page-link" href="?page=1">1</a>
+				</li>
+				{% endif %}
+				<li class="page-item active" aria-current="page">
+					<a href="?page=2" class="page-link">2</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="?page=3">3</a>
+				</li>
+				<!-- show the next page number-->
+				{% if page.has_next %}
+				<li class="page-item">
+					<a class="page-link" href="?page={{page.next_page_number}}">Next</a>
+				</li>
+				{% else %}
+				<li class="page-item disabled">
+					<a class="page-link" href="#">Next</a>
+				</li>
+				{% endif %}
+			</ul>
+		</nav>
+	</div> 

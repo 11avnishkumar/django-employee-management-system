@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %} Django | Add  Employee via upload {% endblock title %}
+{% block header %}
+{% include 'employee/navbar.html' %}
+{% endblock header %}
+<!-- content block -->
+{% block content %}
+<form method="POST" enctype="multipart/form-data" class="col-md-5 mx-auto mt-4">
+  {% csrf_token %}
+<h2 class="text-center">Upload Your file <a href="{% url 'home-page' %}"class="btn btn-danger">Cancel</a></h2>
+<div class="mb-3 mt-5">   
+<div class="input-group">
+  {{form.file_name}}
+  <!--
+    {{form}}
+    if we render only {{form}} then it will render input and label as well
+    we don't want label so we use {{form.file_name}}
+  -->
+</div>
+  </div>
+  <!-- form button -->
+  <div class="d-grid gap-2">
+    <button class="btn btn-outline-success btn-lg p-4" type="submit">Upload &#10230; </button>
+  </div>
+</form>
+<!-- Add and horizontal line -->
+<div class="col-md-5 mx-auto mt-5">
+  <div class="position-relative text-center">
+    <hr class="my-4 text-muted">
+    <p class="position-absolute top-0 start-50 bg-white px-2 translate-middle text-muted"><span class="h5">or</span></p>
+  </div>
+</div>  
+<!-- End of the horizontal line -->
+<div class="col-md-5 mx-auto d-grid">
+  <a href="{% url 'add-employee' %}" class="btn btn-primary btn-lg mt-2 mb-2 p-4">Add Employee via form &#10230;</a>
+</div>
+{% endblock content %}
+<!-- Footer -->
+{% block footer %}{% endblock footer %}

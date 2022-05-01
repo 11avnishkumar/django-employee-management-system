@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+<!-- title -->
+{% block title %}
+  Emplyee Management
+{% endblock title %}
+<!-- header -->
+{% block header %}
+{% include 'employee/navbar.html' %}
+{% endblock header %}
+<!-- off canvas button -->
+{% block canvas %}
+{% include 'employee/offcanvas_bt.html' %}
+{% endblock canvas %}
+<!-- content goes here -->
+{% block content %}
+{% include 'employee/employee_details.html' %}
+{% endblock content %}
+<!-- footer -->
+{% block footer %}
+{% include 'employee/footer.html' %}
+{% endblock footer %}

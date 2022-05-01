@@ -1,0 +1,39 @@
+:root{
+  --background-color: #009879;
+  --color:#e5e5e5;
+  --link-color:#00BFFF;
+  --natoFont:'Noto Sans JP', sans-serif;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--natoFont);
+}
+.custom-border{
+  border-radius: 1rem;
+}
+textarea{
+  resize: none;
+}
+
+
+/* .custom-table th{
+  padding-left: 2rem;
+  background-image: linear-gradient(45deg,#009879,#009897);
+  color:#fff;
+  border-right: 1px solid #fff;
+}
+.custom-table tr:first-child th{
+  color:#fff;
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+}
+.custom-table tr:last-child th{
+  color:#fff;
+  border-bottom-left-radius: 1rem !important;
+  border-bottom-right-radius: 1rem !important;
+} */
+
+

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}  Django | Logout  {% endblock title %}
+{% block content %}
+<div class="container col-5">
+	<div class="border border-2 border-success rounded p-4">
+		<p class="h3">You have been logged out successfully.</p>
+	</div>
+	<div class="logout_link">
+		<div class="d-grid mt-3">
+			<a class="btn btn-primary p-3" href="{% url 'signin' %}">Login again</a>
+		</f>
+	</div>
+ </div>
+{% endblock content %}

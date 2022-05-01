@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+<!-- title -->
+{% block title %}
+	Employee Details
+{% endblock title %}
+<!-- header -->
+{% block header %}
+{% include 'employee/navbar.html' %}
+{% endblock header %}
+<!-- off canvas button -->
+{% block canvas %}
+{% include 'employee/offcanvas_bt.html' %}
+{% endblock canvas %}
+<!-- content -->
+{% block content %}
+<div class="container col-md-5 shadow mt-4 custom-border py-2">
+ 	<p class="h2 text-center py-2">{{employee_details.first_name | title }} <span><a href="{% url 'home-page'%}" class="btn btn-outline-danger text-decoration-none">&#8592; Back</a></span></p>
+  	<table class="table table-borderless custom-table">
+		<tr>
+			<th>Name</th>
+			<td>{{employee_details.first_name}} {{employee_details.last_name}}</td>
+		</tr>
+
+		<tr>
+			<th>Email</th>
+			<td>{{employee_details.email}}</td>
+		</tr>
+
+		<tr>
+			<th>Phone No</th>
+			<td>{{employee_details.phoneno}}</td>
+		</tr>
+
+		<tr>
+			<th>Date of Birth</th>
+			<td>{{employee_details.birthdate}}</td>
+		</tr>
+
+		<tr>
+			<th>Gender</th>
+			<td>{{employee_details.gender}}</td>
+		</tr>
+
+		<tr>
+			<th>Country</th>
+			<td>{{employee_details.country}}</td>
+		</tr>
+		<tr>
+			<th>State</th>
+			<td>{{employee_details.state}}</td>
+		</tr>
+
+		<tr>
+			<th>Designation</th>
+			<td>{{employee_details.designation}}</td>
+		</tr>
+
+		<tr>
+			<th>Date Joined</th>
+			<td>{{employee_details.date|date:'F d, Y'}}</td>
+		</tr>
+		<tr>
+			<th>Address</th>
+			<td>{{employee_details.address}}</td>
+		</tr>
+  	</table>
+  </div>
+{% endblock content %}

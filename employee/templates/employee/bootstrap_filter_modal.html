@@ -1,0 +1,65 @@
+<div class="modal fade" id="filterModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+		<div class="modal-header border-0">
+			<h5 class="modal-title mb-2" id="exampleModalLabel">Filter</h5>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+    <div class="modal-body">
+      <form action="" method="GET" class="needs-validation">
+        <!-- first row-->
+        <div class="row">
+          <div class="col-7">
+            <!-- Email address field-->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" name="email" class="form-control " id="email" aria-describedby="emailHelp">
+            </div>
+          </div>
+          <div class="col-5">
+            <!-- Phone no field-->
+            <div class="mb-3">
+              <label for="phoneNumber" class="form-label">Phone Number</label>
+              <input type="text" name="phone_no" class="form-control " id="phoneNumber">
+            </div>
+          </div>
+        </div>
+        <!-- Second row-->
+        <div class="row">
+          <div class="col">
+            <!-- Email address field-->
+            <div class="mb-3">
+              <label for="date" class="form-label">Date joined</label>
+              <input type="date" name="date" class="form-control " id="date" aria-describedby="emailHelp">
+            </div>
+          </div>
+          <div class="col">
+            <!-- Phone no field-->
+            <div class="mb-3">
+              <label for="date_of_birth" class="form-label">Date of Birth</label>
+              <input type="date" name="date_of_birth" class="form-control " id="date_of_birth">
+            </div>
+          </div>
+        </div>
+        <!-- Gender -->
+        <p class="h6 text-muted mb-3">Gender</p>
+        <div class="mb-3 form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="male" name="gender">
+          <label class="form-check-label" for="male">Male</label>
+        </div>
+        <div class="mb-3 form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="female" name="gender">
+          <label class="form-check-label" for="female">Female</label>
+        </div>
+        <div class="mb-3 form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="transgender" name="gender">
+          <label class="form-check-label" for="transgender">Transgender</label>
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary btn-lg">Apply</button>
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>
