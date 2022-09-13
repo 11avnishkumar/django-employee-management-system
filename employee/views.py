@@ -8,7 +8,7 @@ import csv
 
 # Home Page
 @login_required
-def homePage(request):
+def home_page_view(request):
     queryset = Employee.objects.all()
 
     page = Paginator(queryset,6) #setting up paginator
@@ -35,7 +35,7 @@ def homePage(request):
 
 # Add Employee
 @login_required
-def add_employee(request):
+def add_employee_view(request):
     if request.method == 'POST':
         form = addEmployee(request.POST)
         if form.is_valid():
@@ -54,7 +54,7 @@ def add_employee(request):
 
 # Show Employee Details
 @login_required
-def viewEmployeeDetails(request, employee_slug):
+def employee_detail_view(request, employee_slug):
     queryset = Employee.objects.get(slug=employee_slug)
     context = {
 
@@ -65,7 +65,7 @@ def viewEmployeeDetails(request, employee_slug):
 
 # Update Employee Record
 @login_required
-def updateEmployee(request, id):
+def update_employee_view(request, id):
     edit = Employee.objects.get(id=id)
     form = addEmployee(instance=edit)
     if request.method == 'POST':

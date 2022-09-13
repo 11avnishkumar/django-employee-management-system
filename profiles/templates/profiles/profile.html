@@ -5,35 +5,61 @@
 {% include 'employee/navbar.html' %}
 {% endblock header %}
 {% block content %}
-<div class="container col-md-5 shadow py-3">
-	<div class="image text-center">
-		<img class="img-fluid" src="{% static 'images/Avatar.png' %}" alt="" style="height:100px">
-	</div>
-	<div class="">
-		<div class="row mb-3">
-			<div class="col">
-				Name
-			</div>
-			<div class="col">
-				{{user.first_name}} {{user.last_name}}
-			</div>
-		</div>
-		<div class="row mb-3">
-			<div class="col">
-				Email
-			</div>
-			<div class="col">
-				{{user.email}}
-			</div>
-		</div>
-		<div class="row">
-			<div class="col">
-				Username
-			</div>
-			<div class="col">
-				{{user.username}}
-			</div>
-		</div>
-	</div>
+<div class="col-md-5 mx-auto py-3">
+    <p class="display-6">{{request.user.username | title}}'s Profile</p>    
+    <div class="card p-4">
+        <img src="{{request.user.profile.avatar.url}}" class="card-img-top" alt="profile image">
+
+        <div class="card-body">
+            <h5 class="card-title">About {{request.user.username}}'s <span><a href="{% url 'profile_update' %}" class="btn btn-outline-primary btn-lg">Edit Profile</a></span></h5> 
+            <p class="card-text">{{request.user.profile.bio}}</p>
+        </div>
+        <!-- form -->
+        <hr>
+        
+        <p class="display-6">Personal Information</p>
+        <div>
+            {% if request.user.first_name and request.user.last_name %}
+            <div class="col-md-6">
+                <p>First Name</p>
+                <p>{{request.user.first_name}}</p>
+            </div>
+
+            <!-- Last Name-->
+
+            <div class="col-md-6">
+                <p>Last Name</p>
+                <p>{{request.user.last_name}}</p>
+            </div>
+
+            {% endif %}
+                <!-- Email -->
+                <div class="d-flex justify-content-between">
+                    <div class="">
+                    <p>Email</p>
+                    <p>{{user.email}}</p>
+                </div>
+                <!-- Phone Number-->
+                <div class="">
+                    <p>Phone Number</p>
+                </div>
+            </div>
+
+            <hr>
+             
+            <p class="display-6">Adress</p>
+            <div class="d-flex justify-content-between">
+                <div class="">
+                    <p>City</p>
+                    <p>{{request.user.profile.city}}</p>
+                </div>
+                <div class="">
+                    <p>Country</p>
+                   <p>{{request.user.profile.country}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 {% endblock content %}

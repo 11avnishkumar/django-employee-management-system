@@ -1,13 +1,7 @@
 const getAllcheckBox = document.querySelectorAll('.check')
 const getHeaderSelect = document.querySelector('#select_box')
 const getOptionBox = document.querySelector('#option_box')
-// getAllcheckBox.forEach(element => {
-//   console.log(element.checked) // print false because no checkbox is checked
-//   if(element.checked == false){ // if element is not checked then they return false
-//     element.checked = true // because no checkbox is checked, check them
-//     console.log(element.checked) // at this time all the element is checked,it will return true.
-//   }
-// });
+
 
 // Select all the box
 const selectAllBox = () =>{
@@ -15,7 +9,7 @@ const selectAllBox = () =>{
   console.log(element.checked) // print false because no checkbox is checked
   if(element.checked == false){ // if element is not checked then they return false
     element.checked = true // because no checkbox is checked, check them
-    console.log(element.checked) // at this time all the element is checked,it will return true.
+    console.log(element.checked.length) // at this time all the element is checked,it will return true.
   }
   
 });
@@ -24,10 +18,8 @@ const selectAllBox = () =>{
 // DeSelect all the box
 const deSelectAllBox = ()=>{
    getAllcheckBox.forEach(element => {
-  console.log(element.checked) // print false because no checkbox is checked
   if(element.checked == true){ // if element is not checked then they return false
     element.checked = false // because no checkbox is checked, check them
-    console.log(element.checked) // at this time all the element is checked,it will return true.
   }
   
 });
@@ -38,11 +30,11 @@ const deSelectAllBox = ()=>{
 getHeaderSelect.addEventListener('change',()=>{
   if(getHeaderSelect.checked == true){
     selectAllBox()
-    getOptionBox.classList.remove('d-none')
-    getOptionBox.classList.add('d-block')
-  }else{
+  }
+  else{
     deSelectAllBox()
-    getOptionBox.classList.remove('d-block')
-    getOptionBox.classList.add('d-none')
   }
 })
+
+
+console.log(getAllcheckBox.checked) // this is the logic to apply

@@ -15,6 +15,9 @@
 {% block content %}
 <div class="container col-md-5 shadow mt-4 custom-border py-2">
  	<p class="h2 text-center py-2">{{employee_details.first_name | title }} <span><a href="{% url 'home-page'%}" class="btn btn-outline-danger text-decoration-none">&#8592; Back</a></span></p>
+	 <div class="rounded-circle text-center border border-2">
+		 <img src="{{employee_details.images.url}}" alt="" height="150px" width="150px" class="img-fluid">
+	 </div>
   	<table class="table table-borderless custom-table">
 		<tr>
 			<th>Name</th>

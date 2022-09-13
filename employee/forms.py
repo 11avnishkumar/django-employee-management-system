@@ -5,6 +5,11 @@ from django.forms import ModelForm
 from .models import Employee,Upload_employee_details
 
 class addEmployee(ModelForm):
+    birthdate = forms.CharField(widget=forms.TextInput(
+        attrs={
+            'type':'date'
+        }
+    ))
     class Meta:
         model = Employee
         exclude = ['date','is_active']
