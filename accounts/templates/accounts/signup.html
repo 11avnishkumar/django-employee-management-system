@@ -10,43 +10,43 @@
 		<form action="" method="POST" class="needs-validation" novalidate>
 			{% csrf_token %}
 			<div class="row mb-3">
-				<div class="col">
+				<div class="form-floating col">
 					{{form.first_name}}
 					{{form.errors.first_name}}
 				</div>
-				<div class="col">
+				<div class="form-floating col">
 					{{form.last_name}}
 					{{form.errors.last_name}}
 				</div>
 			</div>
 			<!-- second row-->
 			<div class="row mb-3">
-				<div class="col">
+				<div class="form-floating col">
 					{{form.username}}
 					<p class="text-danger mb-0">{{form.errors.username | striptags}}</p>
 				</div>
 			</div>
 			<div class="row mb-3">   
-				<div class="col">
+				<div class="form-floating col">
 					{{form.email}}
 					{{form.errors.email}}
 				</div>
 			</div>
 			<!-- Third row-->
 			<div class="row mb-3">
-				<div class="col">
+				<div class="form-floating col">
 					{{form.password1}}
 				</div>
 			</div>
 			<div class="row mb-3">	
-				<div class="col">
+				<div class="form-floating col">
 					{{form.password2}}
 				</div>
 				<i class="fas fa-alert"></i>
 				<p class="text-danger mb-0">{{form.errors.password2 | striptags}}</p>
 			</div>
 			<div class="d-grid">
-				<input type="submit" class="btn btn-primary btn-lg rounded-pill p-3 mb-3" value="Signup &#10230;">
+				<input type="submit" class="btn btn-primary btn-lg rounded-pill p-3 mb-3 bg-gradient" value="Signup &#10230;">
 			</div>
 			<div class="text-center">
 				<small class="h6">Already have an account? <a href="{% url 'signin' %}" class="text-decoration-none">Sign In</a></small>

@@ -16,14 +16,14 @@
 			{% endfor %}
 			</div>
 			{% endif %}	
-			<div class="form-floating form-group mb-4">
-				<input class="form-control form-control-lg" type="text" name="username" autocomplete="off" required >
-				<label for="floatingInput">Username</label>
+			<div class="form-floating mb-4">
+				<input class="form-control form-control-lg" type="text" name="username" autocomplete="off" required id="id_username">
+				<label for="id_username">Username</label>
 			</div>
 			{{form.errors.username}}
-			<div class="form-floating form-group mb-2">
-				<input class="form-control form-control-lg" type="password" name="password"  autocomplete="off" required>
-				<label for="floatingInput">Password</label>
+			<div class="form-floating  mb-2">
+				<input class="form-control form-control-lg" type="password" name="password"  autocomplete="off" required id="id_password">
+				<label for="id_password">Password</label>
 			</div>
 			{{form.errors.password}}
 			<div class="form-group mb-4 text-end">

@@ -7,7 +7,7 @@ from django_countries.fields import CountryField
 def create_slug(first_name):
        slug = slugify(first_name)
        qs = Employee.objects.filter(slug=slug)
-       exists = qs.exists()
+       exists = qs.exists() # return true or false
        if exists:
            slug = "%s-%s" %(slug, qs.first().id)
        return slug

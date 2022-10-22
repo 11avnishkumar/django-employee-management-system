@@ -28,8 +28,8 @@ def signIn(request):
            if user is not None:
                login(request,user)
                return redirect('home-page')
-       else:
-        print(form.errors)        
+    #    else:
+    #     print(form.errors)  for debugging      
     else:
        form =  AuthenticationForm()            
     context = {

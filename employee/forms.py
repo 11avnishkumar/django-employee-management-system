@@ -30,7 +30,7 @@ class addEmployee(ModelForm):
         self.fields['country'].widget.attrs['placeholder'] = 'Country'
         self.fields['state'].widget.attrs['class'] = 'form-select form-select-lg'
         self.fields['state'].widget.attrs['placeholder'] = 'State'
-        self.fields['designation'].widget.attrs['class'] = 'form-control form-control-lg'
+        self.fields['designation'].widget.attrs['class'] = 'form-select form-select-lg'
         self.fields['designation'].widget.attrs['placeholder'] = 'Designation'
         self.fields['birthdate'].widget.attrs['class'] = 'form-control form-control-lg '
         self.fields['birthdate'].widget.attrs['placeholder'] = 'Date of Birth'
