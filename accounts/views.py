@@ -8,8 +8,8 @@ def signUp(request):
         form = registerUser(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get('username')
-            return redirect('login')
+            email = form.cleaned_data.get('email')
+            return redirect('signin')
     else:
         form = registerUser()
     context = {

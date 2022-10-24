@@ -4,5 +4,5 @@ from accounts.views import *
 urlpatterns = [
     path('signin/', signIn,name='signin'),
     path('signup/', signUp,name='signup'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='accounts/logout.html'), name='logout'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='accounts/signin.html'), name='logout'),
 ]

@@ -1,0 +1,28 @@
+.custom-shape-divider-bottom-1666456426 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index:-1;
+}
+
+.custom-shape-divider-bottom-1666456426 svg {
+    position: relative;
+    display: block;
+    width: calc(187% + 1.3px);
+    height: 500px;
+    animation:wave 5s ease-in-out;
+}
+
+.custom-shape-divider-bottom-1666456426 .shape-fill {
+    fill: #55efc4;
+}
+
+@keyframes wave{
+    from{
+        height:0;
+    }
+    to{height:500px;}
+}

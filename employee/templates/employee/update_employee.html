@@ -8,11 +8,10 @@
 {% endblock canvas %}
 <!-- content goes here -->
 {% block content %}
-<div class="container col-md-6 mt-3 rounded  py-4 px-4">
-	<h1 class="h3 py-2">Update Details</h1>
+<div class="max-w-lg mx-auto mt-3 rounded  py-4 px-4">
 	<form action="" method="POST" class="needs-validation" novalidate>
 		{% csrf_token %}
-		<div class="row">
+		<div class="grid grid-cols-2 gap-2">
 			<div class="col">
 				<div class="form-group my-2">
 					{{form.first_name}}
@@ -24,7 +23,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="grid grid-cols-2 gap-2">
 			<div class="col">
 				<div class="form-group my-2">
 					{{form.email}}
@@ -36,14 +35,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="grid grid-cols-1">
 			<div class="col">
 				<div class="form-group my-2">
 					{{form.gender}}
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="grid grid-cols-2 gap-2">
 			<div class="col">
 				<div class="form-group my-2">
 					{{form.country}}
@@ -55,7 +54,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="grid grid-cols-2 gap-2">
 			<div class="col">
 				<div class="form-group my-2">
 					{{form.birthdate}}
@@ -67,16 +66,16 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="grid grid-cols-1">
 			<div class="col">
 				<div class="form-group my-2">
 					{{form.address}}
 				</div>
 			</div>
 		</div>
-		<div class="d-grid gap-2">
-			<input type="submit" value="Update" class="btn btn-lg p-3 btn-primary btn-lg">
-			<a href="{% url 'home-page' %}" class="btn btn-lg p-3 btn-outline-danger">Cancel</a>
+		<div class="flex gap-2">
+			<input type="submit" value="Update" class="bg-indigo-600 text-white p-3 cursor-pointer">
+			<a href="{% url 'home-page' %}" class="bg-red-600 text-white p-3">Cancel</a>
 		</div>
 	</form>
 </div>

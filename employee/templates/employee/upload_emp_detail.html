@@ -5,23 +5,22 @@
 {% endblock header %}
 <!-- content block -->
 {% block content %}
-<form method="POST" enctype="multipart/form-data" class="col-md-5 mx-auto mt-4">
+<div class="max-w-lg mx-auto border px-3 py-2">
+<form method="POST" enctype="multipart/form-data" class="max-w-lg mx-auto mt-4">
   {% csrf_token %}
-<h2 class="text-center">Upload Your file <a href="{% url 'home-page' %}"class="btn btn-danger rounded-pill w-25">Cancel</a></h2>
-<div class="mb-3 mt-5">   
-<div class="input-group">
-  {{form.file_name}}
-  <!--
-    {{form}}
-    if we render only {{form}} then it will render input and label as well
-    we don't want label so we use {{form.file_name}}
-  -->
-</div>
-  </div>
-  <!-- form button -->
-  <div class="d-grid gap-2">
-    <button class="btn btn-success btn-lg p-4" type="submit">Upload by a file &#10230; </button>
-  </div>
+    <div class="flex justify-between align-items-center mb-3">
+      <p class="text-center text-4xl">Upload file</p>
+      <a href="{% url 'home-page' %}"class="text-red-600 rounded-pill w-25">Cancel</a></h2>  
+    </div>
+    <div class="input-group">
+      {{form.file_name}}
+      <!--
+        {{form}}
+        if we render only {{form}} then it will render input and label as well
+        we don't want label so we use {{form.file_name}}
+      -->
+    </div>
+    <button class="bg-green-600 p-4" type="submit">Upload by a file &#10230; </button>
 </form>
 <!-- Add and horizontal line -->
 <div class="col-md-5 mx-auto mt-5">
@@ -30,9 +29,7 @@
     <p class="position-absolute top-0 start-50 bg-white px-2 translate-middle text-muted"><span class="h5">or</span></p>
   </div>
 </div>  
-<!-- End of the horizontal line -->
-<div class="col-md-5 mx-auto d-grid">
-  <a href="{% url 'add-employee' %}" class="btn btn-primary btn-lg mt-2 mb-2 p-4">Add employee via form &#10230;</a>
+<a href="{% url 'add-employee' %}" class=" w-full bg-emerald-500 mt-2 mb-2 p-4">Add employee via form &#10230;</a>
 </div>
 {% endblock content %}
 <!-- Footer -->

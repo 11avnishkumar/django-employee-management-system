@@ -13,59 +13,54 @@
 {% endblock canvas %}
 <!-- content -->
 {% block content %}
-<div class="container col-md-5 shadow mt-4 custom-border py-2">
- 	<p class="h2 text-center py-2">{{employee_details.first_name | title }} <span><a href="{% url 'home-page'%}" class="btn btn-outline-danger text-decoration-none">&#8592; Back</a></span></p>
-	 <div class="rounded-circle text-center border border-2">
+<div class="max-w-md mx-auto  mt-4 custom-border py-2">
+	<div class="grid grid-cols-2 justify-between">
+		<p class="h2 text-center py-2">{{employee_details.first_name | title }}</p>
+		<a href="{% url 'home-page'%}" class="btn btn-outline-danger text-decoration-none">&#8592; Back</a>
+	</div>
+	 <div class="" height="150px" width="150px">
 		 <img src="{{employee_details.images.url}}" alt="" height="150px" width="150px" class="img-fluid">
 	 </div>
-  	<table class="table table-borderless custom-table">
-		<tr>
-			<th>Name</th>
-			<td>{{employee_details.first_name}} {{employee_details.last_name}}</td>
-		</tr>
-
-		<tr>
-			<th>Email</th>
-			<td>{{employee_details.email}}</td>
-		</tr>
-
-		<tr>
-			<th>Phone No</th>
-			<td>{{employee_details.phoneno}}</td>
-		</tr>
-
-		<tr>
-			<th>Date of Birth</th>
-			<td>{{employee_details.birthdate}}</td>
-		</tr>
-
-		<tr>
-			<th>Gender</th>
-			<td>{{employee_details.gender}}</td>
-		</tr>
-
-		<tr>
-			<th>Country</th>
-			<td>{{employee_details.country}}</td>
-		</tr>
-		<tr>
-			<th>State</th>
-			<td>{{employee_details.state}}</td>
-		</tr>
-
-		<tr>
-			<th>Designation</th>
-			<td>{{employee_details.designation}}</td>
-		</tr>
-
-		<tr>
-			<th>Date Joined</th>
-			<td>{{employee_details.date|date:'F d, Y'}}</td>
-		</tr>
-		<tr>
-			<th>Address</th>
-			<td>{{employee_details.address}}</td>
-		</tr>
-  	</table>
+	 <!-- show details in table form -->
+	 <div class="grid grid-cols-2 mt-2 d-flex justify-content-between align-items-center">
+		<div class="col">Name</div>
+		<div class="col">{{employee_details.first_name}} {{employee_details.last_name}}</div>
+	 </div>
+	 <div class="grid grid-cols-2 mt-2 d-flex justify-content-between align-items-center">
+		<div class="col">Email</div>
+		<div class="col">{{employee_details.email}}</div>
+	 </div>
+	 <div class="grid grid-cols-2 mt-2 d-flex justify-content-between align-items-center">
+		<div class="col">Phone No</div>
+		<div class="col">{{employee_details.phoneno}}</div>
+	 </div>
+	 <div class="grid grid-cols-2 mt-2 d-flex justify-content-between align-items-center">
+		<div class="col">Date of Birth</div>
+		<div class="col">{{employee_details.birthdate}}</div>
+	 </div>
+	 <div class="grid grid-cols-2 mt-2 d-flex justify-content-between align-items-center">
+		<div class="col">Gender</div>
+		<div class="col">{{employee_details.gender}}</div>
+	 </div>
+	 <div class="grid grid-cols-2 mt-2 d-flex justify-content-between align-items-center">
+		<div class="col">Country</div>
+		<div class="col">{{employee_details.country}}</div>
+	 </div>
+	 <div class="grid grid-cols-2 mt-2 d-flex justify-content-between align-items-center">
+		<div class="col">State</div>
+		<div class="col">{{employee_details.state}}</div>
+	 </div>
+	 <div class="grid grid-cols-2 mt-2 d-flex justify-content-between align-items-center">
+		<div class="col">Designation</div>
+		<div class="col">{{employee_details.designation}}</div>
+	 </div>
+	 <div class="grid grid-cols-2 mt-2 d-flex justify-content-between align-items-center">
+		<div class="col">Date Joined</div>
+		<div class="col">{{employee_details.date|date:'F d, Y'}}</div>
+	 </div>
+	 <div class="grid grid-cols-2 mt-2 d-flex justify-content-between align-items-center">
+		<div class="col">Address</div>
+		<div class="col">{{employee_details.address}}</div>
+	 </div>
   </div>
 {% endblock content %}

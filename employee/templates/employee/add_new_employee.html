@@ -8,11 +8,14 @@
 {% endblock canvas %}
 {% block content %}
 <!-- off canvas button trigger-->
-<div class="container col-md-6 mt-3 rounded  py-4 px-4">
-	<p class="h3 py-2">Enter employee details</p>
+<div class="max-w-lg mx-auto mt-3 rounded  py-4 px-4">
+	<div class="flex justify-between align-items-center">
+		<p class="py-2">Enter Details</p>
+		<a href="" class="text-red-600">Go Back</a>
+	</div>
 	<form action="" method="POST" class="needs-validation" novalidate>
 		{% csrf_token %}
-		<div class="row">
+		<div class="grid grid-cols-2 gap-2">
 			<div class="col">
 				<div class="form-group my-2">
 					{{form.first_name}}
@@ -24,7 +27,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="grid grid-cols-2 gap-2">
 			<div class="col">
 				<div class="form-group my-2">
 					{{form.email}}
@@ -36,14 +39,14 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="grid grid-cols-1">
 			<div class="col">
 				<div class="form-group my-2">
 					{{form.gender}}
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="grid grid-cols-2 gap-2">
 			<div class="col">
 				<div class="form-group my-2">
 				<i class="{{ country.flag_css }}"></i>
@@ -56,7 +59,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="grid grid-cols-2 gap-2">
 			<div class="col">
 				<div class="form-group my-2">
 					{{form.birthdate}}
@@ -68,7 +71,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="grid grid-cols-1">
 			<div class="col">
 				<div class="form-group my-2">
 					{{form.address}}
@@ -76,9 +79,9 @@
 			</div>
 		</div>
 		<!-- primary button -->
-		<div class="d-grid my-2">
-			<button type="submit" class="btn btn-primary btn-lg p-4">Add &#10230;</button>
-		</div>
+		
+		<button type="submit" class="bg-emerald-500 w-full px-2 py-4">Add &#10230;</button>
+		
 	</form>
 </div>
 {% endblock content %}
